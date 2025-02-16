@@ -1,0 +1,27 @@
+spring:
+  r2dbc:
+    url: "r2dbc:${DATASOURCE_URL}"
+    username: "${DATASOURCE_USERNAME}"
+    password: "${DATASOURCE_PASSWORD}"
+  flyway:
+    url: "jdbc:${DATASOURCE_URL}"
+    user: "${DATASOURCE_USERNAME}"
+    password: "${DATASOURCE_PASSWORD}"
+    baseline-on-migrate: true
+    baseline-version: 0
+    enabled: true
+  main:
+    web-application-type: reactive
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+management:
+  endpoints:
+    web:
+      exposure:
+        include: metrics
+  metrics:
+    tags:
+      application: avito;
