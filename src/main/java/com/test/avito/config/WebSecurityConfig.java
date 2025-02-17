@@ -43,7 +43,7 @@ public class WebSecurityConfig {
                                                 handleException(swe, e, HttpStatus.FORBIDDEN)
                                 ))
                 .authorizeExchange(authorizeExchangeSpec ->
-                        authorizeExchangeSpec.pathMatchers("/api/auth/**").permitAll()
+                        authorizeExchangeSpec.pathMatchers("/api/auth", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
                                 .anyExchange().authenticated())
                 .build();
     }
