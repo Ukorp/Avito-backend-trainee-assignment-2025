@@ -2,6 +2,7 @@ package com.test.avito.controller;
 
 import com.test.avito.model.Inventory;
 import com.test.avito.service.InventoryService;
+import io.swagger.v3.oas.annotations.Hidden;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import java.security.Principal;
 @RestController
 @RequestMapping("api")
 @RequiredArgsConstructor
+@Hidden
 public class InventoryController {
 
     private final InventoryService inventoryService;
